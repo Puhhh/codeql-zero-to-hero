@@ -12,7 +12,6 @@ import semmle.python.dataflow.new.TaintTracking
 import semmle.python.Concepts
 import semmle.python.dataflow.new.RemoteFlowSources
 import semmle.python.ApiGraphs
-import semmle.python.frameworks.Gradio
 
 class GradioButton extends RemoteFlowSource::Range {
     GradioButton() {
@@ -32,7 +31,8 @@ predicate nameAttrRead(DataFlow::Node nodeFrom, DataFlow::Node nodeTo) {
       and nodeTo = attr
     )
     and
-    exists(Gradio::GradioInput node, int i, DataFlow::Node n1, DataFlow::Node n2 |
+    exists(API::CallNode node, int i, DataFlow::Node n1, DataFlow::Node n2 |
+		node = API::moduleImport("gradio").getAMember().getReturn().getAMember().getACall() and
         n2 = node.getParameter(0, "fn").getParameter(i).asSource()
         and n1.asCfgNode() =
           node.getParameter(1, "inputs").asSink().asCfgNode().(ListNode).getElement(i)
