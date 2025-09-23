@@ -46,7 +46,7 @@ predicate osOpenStep(DataFlow::Node nodeFrom, DataFlow::Node nodeTo) {
     exists(API::CallNode call |
         call = API::moduleImport("os").getMember("open").getACall() and
         nodeFrom = call.getArg(0) and
-        nodeTo = call.getACall())
+        nodeTo = call)
     or
     exists(API::CallNode call |
         call = API::builtin("open").getACall() and
@@ -55,7 +55,7 @@ predicate osOpenStep(DataFlow::Node nodeFrom, DataFlow::Node nodeTo) {
 }
 
 module MyConfig implements DataFlow::ConfigSig {
-  predicate isSource(DataFlow::Node source) { source instanceof RemoteFlowSource }
+  predicate isSource(DataFlow::Node source) { source instanceof GradioButton }
 
   predicate isSink(DataFlow::Node sink) {
     exists(Decoding d | d.mayExecuteInput() | sink = d.getAnInput())

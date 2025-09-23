@@ -9,6 +9,6 @@ python example.py
 ```
 This will start a new Gradio app.
 
-To run the CodeQL queries in this repo, you'll need [VS Code with CodeQL extension](https://marketplace.visualstudio.com/items?itemName=GitHub.vscode-codeql) installed.
+To run the CodeQL queries in this repo, you'll need VS Code with the [CodeQL extension](https://marketplace.visualstudio.com/items?itemName=GitHub.vscode-codeql) installed.
 
 Alternatively, you can use the [VS Code CodeQL starter workspace](https://github.com/github/vscode-codeql-starter) if you want to get started with writing your own queries for any language supported by CodeQL: Javascript, Ruby, Java, C/C++ etc.

@@ -38,7 +38,7 @@ predicate osOpenStep(DataFlow::Node nodeFrom, DataFlow::Node nodeTo) {
     exists(API::CallNode call |
         call = API::moduleImport("os").getMember("open").getACall() and
         nodeFrom = call.getArg(0) and
-        nodeTo = call.getACall())
+        nodeTo = call)
     or
     exists(API::CallNode call |
         call = API::builtin("open").getACall() and
