@@ -9,7 +9,7 @@ With the setup that you created in the earlier challenges, we will run the query
 <img src="../../images/download-from-github.png"  width="380" alt="Screenshot: Select CodeQL DB from GitHub icon">
 
 <img src="../../images/specify-github-repo.png"  width="620" alt="Screenshot: Enter a GitHub repository URL">
-3. Check that the database is selcted, like in the step 1.
+3. Check that the database is selected, like in the step 1.
 
 ## Run the query
 1. Got to the 'Explorer' tab and create a new file in the `codeql-custom-queries-python` folder. Call the file `call.ql` and copy the below query into the file.
